@@ -20,7 +20,7 @@ class App extends Component {
     let htmlTarefas = [];
 
     for(let tarefa of this.state.tarefas){
-      htmlTarefas.push(<Tarefa nome={tarefa} feita={false}/>);
+      htmlTarefas.push(<Tarefa nome={tarefa}/>);
     }
 
     return (
