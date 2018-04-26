@@ -1,0 +1,30 @@
+header{
+  background-color: black;
+  padding: 10px;
+}
+
+header h1{
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: normal;
+}
+
+header h1 span{
+  color: #f90030
+}
+
+.container{
+  width: 800px;
+  margin: auto;
+}
+
+.formulario input{
+  padding: 10px;
+  margin: 50px 0;
+  width: 100%;
+  color: #333;
+  font-size: 20px;
+  border-radius: 3px;
+  border: 1px solid #888;
+}

@@ -1,0 +1,10 @@
+.tarefa{
+    display: flex;
+    margin: 20px 0;
+}
+
+.tarefa p {
+    font-size: 20px;
+    margin: 0 5px;
+    color: #333;
+}
