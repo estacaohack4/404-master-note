@@ -3,7 +3,26 @@ import './App.css';
 import Tarefa from '../Tarefa/Tarefa';
 
 class App extends Component {
-  render() {
+  componentWillMount(){
+    this.setState({tarefas: []});
+  }
+
+  atualizarTarefa = (event) => {
+    if(event.keyCode == 13){
+      let tarefas = this.state.tarefas;
+      tarefas.push(event.target.value);
+      
+      this.setState({tarefas: tarefas});
+    }
+  }
+
+  render = () => {
+    let htmlTarefas = [];
+
+    for(let tarefa of this.state.tarefas){
+      htmlTarefas.push(<Tarefa nome={tarefa} feita={false}/>);
+    }
+
     return (
       <div>
         <header>
@@ -12,12 +31,11 @@ class App extends Component {
 
         <div className="container">
           <section className="formulario">
-            <input type="text" placeholder="Digite uma tarefa..." />
+            <input type="text" placeholder="Digite uma tarefa..." onKeyDown={this.atualizarTarefa} />
           </section>
           
           <section className="lista">
-            <Tarefa nome="Comprar pão" feita={true}/>
-            <Tarefa nome="Lavar roupa" feita={false}/>
+            {htmlTarefas}
           </section>
         </div>
       </div>
